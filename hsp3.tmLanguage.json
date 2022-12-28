@@ -1,0 +1,65 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "hsp3",
+    "patterns": [
+        {
+            "include": "#keywords"
+        }
+    ],
+    "repository": {
+         "keywords": {
+             "patterns": [
+                {
+                    "name": "keyword.control",
+                    "match": "\\b(#define|#const|#uselib|#func|#cfunc|#deffunc|#defcfunc|#packopt|#include|#addtion|#aht|#ahtmes|#bootopt|#cmd|#cmdopt|#if|#ifdef|#ifndef|#else|#elseif|#end|#enum|#pack|#epack|#module|#global|#modcfunc|#modfunc|#modterm|#regcmd|#runtime|#undef|#usecom)\\b"
+                },
+
+                {
+                    "name": "keyword.other",
+                    "match": "\\b(mes|pos|font|redraw|boxf|line|repeat|loop|wait|await|title|dim|sdim|str|int|return|dimtype)\\b"
+                },
+
+				{
+					"name": "comment.block",
+					"begin": "/\\*",
+					"end": "\\*/"
+				},
+
+				{
+					"name": "comment.line",
+					"match": "(;|//).*$"
+				},
+
+				{
+					"name": "keyword.other.unit",
+					"match": "\\b(ddim|for)\\b"
+				},
+
+				{
+					"name": "string.quoted",
+					"begin": "{\"",
+					"end": "\"}",
+					"patterns": [
+						{
+							"name": "constant.character.escape.d",
+							"match": "\\\\."
+						}
+					]
+				},
+
+				{
+					"name": "string.quoted.double.d",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.d",
+							"match": "\\\\."
+						}
+					]
+				}
+            ]
+        }
+    },
+    "scopeName": "source.hsp3"
+}

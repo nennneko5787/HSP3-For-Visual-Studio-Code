@@ -1,0 +1,30 @@
+{
+    "name": "hsp3-for-visual-studio-code",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.33.1"
+    },
+    "main": "./extension.js",
+    "activationEvents": [
+        "*"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "HSP3-For-Visual-Studio-Code.Compile",
+                "title": "HSP3:コンパイル"
+            }
+        ],
+		"languages": [
+            {
+               "id": "HSP3",
+               "extensions": [".hsp",".as"]
+            }
+        ],
+        "grammars": [{
+            "language": "HSP3",
+            "scopeName": "source.hsp3",
+            "path": "./hsp3.tmLanguage.json"
+        }]
+    }
+}
